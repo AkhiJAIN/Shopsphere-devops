@@ -1,0 +1,173 @@
+# ShopSphere DevOps Project
+
+## Day 1 Report – Project Planning & Architecture Design
+
+**Project Name:** ShopSphere
+
+**Repository Name:** shopsphere-devops
+
+**Architecture Pattern:** Three-Tier Architecture
+
+**Date:** Day 1
+
+---
+
+# Objective
+
+The objective of this project is to deploy a production-ready, cloud-native e-commerce application on AWS by implementing modern DevOps practices. The infrastructure will be provisioned using Infrastructure as Code (Terraform), configured with Ansible, containerized using Docker, orchestrated with Kubernetes (Amazon EKS), automated through Jenkins CI/CD pipelines, and monitored using Prometheus, Grafana, and AWS CloudWatch.
+
+---
+
+# Project Overview
+
+ShopSphere is an enterprise-grade e-commerce application consisting of three logical layers:
+
+* **Presentation Layer:** React.js application served through Nginx.
+* **Application Layer:** Spring Boot REST API responsible for business logic.
+* **Data Layer:** MySQL database hosted on Amazon RDS for persistent data storage.
+
+The application is designed for scalability, high availability, security, and automated deployments.
+
+---
+
+# Architecture Overview
+
+The project follows the Three-Tier Architecture pattern.
+
+```
+Users
+   │
+   ▼
+React + Nginx (Frontend)
+   │
+REST API
+   │
+Spring Boot Backend
+   │
+Amazon RDS MySQL
+```
+
+---
+
+# AWS Services Selected
+
+| Service                   | Purpose                                               |
+| ------------------------- | ----------------------------------------------------- |
+| Amazon VPC                | Network isolation                                     |
+| Public & Private Subnets  | Network segmentation                                  |
+| Internet Gateway          | Public internet connectivity                          |
+| NAT Gateway               | Secure outbound internet access for private resources |
+| Amazon EKS                | Kubernetes cluster for application deployment         |
+| Amazon RDS (MySQL)        | Managed relational database                           |
+| Application Load Balancer | Traffic distribution                                  |
+| Amazon S3                 | Terraform remote state and storage                    |
+| IAM                       | Identity and access management                        |
+| CloudWatch                | Logging and monitoring                                |
+
+---
+
+# DevOps Tool Stack
+
+* Git
+* GitHub
+* Terraform
+* Ansible
+* Docker
+* Kubernetes (Amazon EKS)
+* Helm
+* Jenkins
+* Prometheus
+* Grafana
+* AWS CloudWatch
+
+---
+
+# Planned Repository Structure
+
+```
+shopsphere-devops/
+│
+├── terraform/
+├── ansible/
+├── docker/
+├── kubernetes/
+├── helm/
+├── jenkins/
+├── monitoring/
+├── scripts/
+├── architecture/
+├── docs/
+└── README.md
+```
+
+---
+
+# Network Design
+
+A highly available network architecture will be deployed across two Availability Zones.
+
+The planned network includes:
+
+* One Virtual Private Cloud (VPC)
+* Two Public Subnets
+* Two Private Application Subnets
+* Two Private Database Subnets
+* Internet Gateway
+* NAT Gateway
+* Route Tables
+* Security Groups
+
+---
+
+# Initial CIDR Plan
+
+| Resource             | CIDR         |
+| -------------------- | ------------ |
+| VPC                  | 10.0.0.0/16  |
+| Public Subnet A      | 10.0.1.0/24  |
+| Public Subnet B      | 10.0.2.0/24  |
+| Private App Subnet A | 10.0.11.0/24 |
+| Private App Subnet B | 10.0.12.0/24 |
+| Private DB Subnet A  | 10.0.21.0/24 |
+| Private DB Subnet B  | 10.0.22.0/24 |
+
+---
+
+# Public and Private Resources
+
+**Public Resources**
+
+* Application Load Balancer
+* NAT Gateway
+* Jenkins Server (initial setup)
+
+**Private Resources**
+
+* Amazon EKS Worker Nodes
+* Backend Application Pods
+* Amazon RDS MySQL Database
+
+---
+
+# Deliverables Completed
+
+* Project scope defined.
+* Application architecture finalized.
+* AWS services identified.
+* DevOps tools selected.
+* Repository structure planned.
+* Network topology designed.
+* CIDR addressing planned.
+
+---
+
+# Next Steps (Day 2)
+
+* Create the GitHub repository.
+* Initialize the project directory structure.
+* Configure Terraform remote state using Amazon S3 and DynamoDB.
+* Begin provisioning the AWS networking infrastructure, starting with the VPC and subnets.
+
+---
+
+**Status:** Phase 1 (Planning) Completed.
