@@ -1,0 +1,6 @@
+Enhanced the AWS network security model by implementing NAT Gateway with Elastic
+ IP to provide secure outbound internet connectivity for private resources without
+  exposing them publicly. Configured private route tables for application subnets 
+  and designed layered security groups for the Application Load Balancer, backend
+   services, and database tier. Implemented a secure traffic flow model where only 
+   required ports are accessible between application layers

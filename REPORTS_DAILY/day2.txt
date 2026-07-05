@@ -1,0 +1,6 @@
+Started the infrastructure implementation phase for the ShopSphere cloud-native e-commerce 
+platform. Configured Terraform with the AWS provider and designed a reusable Infrastructure
+ as Code (IaC) structure using Terraform modules. Created the foundational AWS networking
+  layer by provisioning a Virtual Private Cloud (VPC) with CIDR block 10.0.0.0/16. 
+  Implemented modular Terraform practices to improve scalability, maintainability, 
+  and support future infrastructure expansion.

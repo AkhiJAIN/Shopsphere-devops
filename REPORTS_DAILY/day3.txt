@@ -1,0 +1,6 @@
+Extended the Terraform VPC module by implementing a production-ready network architecture
+ across multiple Availability Zones. Created public subnets for internet-facing resources,
+  private application subnets for backend workloads, and private database subnets for secure
+   data storage. Configured an Internet Gateway and public route tables to enable controlled
+    internet access. Established proper network segmentation following AWS cloud 
+    architecture best practices.
