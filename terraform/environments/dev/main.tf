@@ -65,3 +65,13 @@ module "vpc" {
   ]
 
 }
+module "eks"{
+
+
+source="../../modules/eks"
+
+
+private_subnets=module.vpc.private_app_subnet_ids
+
+
+}
