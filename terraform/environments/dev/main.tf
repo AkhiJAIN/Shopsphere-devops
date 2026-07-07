@@ -75,3 +75,24 @@ private_subnets=module.vpc.private_app_subnet_ids
 
 
 }
+module "security_group" {
+
+  source = "../../modules/security-group"
+
+
+  vpc_id = module.vpc.vpc_id
+
+}
+module "rds" {
+
+  source = "../../modules/rds"
+
+  database_subnets = module.vpc.private_db_subnet_ids
+
+  db_security_group = module.security_group.database_sg_id
+
+  db_username = "admin"
+
+  db_password = "ShopSphere12345"
+
+}
